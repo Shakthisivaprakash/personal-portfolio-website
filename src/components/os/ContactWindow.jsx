@@ -254,7 +254,27 @@ export default function ContactWindow({ visible, onClose }) {
                         <Mail size={13} className="text-[#FFD1DC]" />
                         <div className="flex-1">
                           <span className="font-pixel text-[4.5px] text-slate-500 block uppercase">EMAIL GATEWAY</span>
-                          <span className="text-white text-[11px] truncate block">shakthisivaprakash.s09@gmail.com</span>
+                          <a
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=shakthisivaprakash.s09@gmail.com&su=Portfolio%20Inquiry"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              const gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=shakthisivaprakash.s09@gmail.com&su=Portfolio%20Inquiry";
+                              const mailtoUrl = "mailto:shakthisivaprakash.s09@gmail.com?subject=Portfolio%20Inquiry";
+                              try {
+                                const newWindow = window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+                                if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+                                  window.location.href = mailtoUrl;
+                                }
+                              } catch (err) {
+                                window.location.href = mailtoUrl;
+                              }
+                            }}
+                            className="text-white hover:text-[#FFD1DC] text-[11px] truncate block transition-colors duration-150 cursor-pointer"
+                          >
+                            shakthisivaprakash.s09@gmail.com
+                          </a>
                         </div>
                       </div>
 
@@ -262,7 +282,12 @@ export default function ContactWindow({ visible, onClose }) {
                         <Phone size={13} className="text-[#FFD1DC]" />
                         <div className="flex-1">
                           <span className="font-pixel text-[4.5px] text-slate-500 block uppercase">CELLULAR ROUTE</span>
-                          <span className="text-white text-[11px] block">+91 9342919614</span>
+                          <a
+                            href="tel:+919342919614"
+                            className="text-white hover:text-[#FFD1DC] text-[11px] block transition-colors duration-150 cursor-pointer"
+                          >
+                            +91 9342919614
+                          </a>
                         </div>
                       </div>
 
@@ -270,7 +295,14 @@ export default function ContactWindow({ visible, onClose }) {
                         <Linkedin size={13} className="text-[#FFD1DC]" />
                         <div className="flex-1">
                           <span className="font-pixel text-[4.5px] text-slate-500 block uppercase">LINKEDIN PROFILE</span>
-                          <span className="text-white text-[11px] block">linkedin.com/in/shakthi-siva</span>
+                          <a
+                            href="https://linkedin.com/in/shakthi-siva"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white hover:text-[#FFD1DC] text-[11px] block transition-colors duration-150 cursor-pointer"
+                          >
+                            linkedin.com/in/shakthi-siva
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -279,8 +311,23 @@ export default function ContactWindow({ visible, onClose }) {
                     <div className="grid grid-cols-2 gap-2">
                       {/* Email Button */}
                       <a
-                        href="mailto:shakthisivaprakash.s09@gmail.com"
-                        className="py-1.5 font-pixel text-[6px] text-center border-2 border-[#FFD1DC] bg-transparent text-[#FFD1DC] hover:bg-[#FFD1DC]/10 uppercase transition-all tracking-wider flex items-center justify-center gap-1.5"
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=shakthisivaprakash.s09@gmail.com&su=Portfolio%20Inquiry"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          const gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=shakthisivaprakash.s09@gmail.com&su=Portfolio%20Inquiry";
+                          const mailtoUrl = "mailto:shakthisivaprakash.s09@gmail.com?subject=Portfolio%20Inquiry";
+                          try {
+                            const newWindow = window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+                            if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+                              window.location.href = mailtoUrl;
+                            }
+                          } catch (err) {
+                            window.location.href = mailtoUrl;
+                          }
+                        }}
+                        className="py-1.5 font-pixel text-[6px] text-center border-2 border-[#FFD1DC] bg-transparent text-[#FFD1DC] hover:bg-[#FFD1DC]/10 uppercase transition-all tracking-wider flex items-center justify-center gap-1.5 cursor-pointer"
                         style={{ boxShadow: '2px 2px 0 rgba(255,209,220,0.2)' }}
                       >
                         <Mail size={10} />
@@ -292,7 +339,7 @@ export default function ContactWindow({ visible, onClose }) {
                         href="https://linkedin.com/in/shakthi-siva"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="py-1.5 font-pixel text-[6px] text-center border-2 border-[#FFD1DC] bg-transparent text-[#FFD1DC] hover:bg-[#FFD1DC]/10 uppercase transition-all tracking-wider flex items-center justify-center gap-1.5"
+                        className="py-1.5 font-pixel text-[6px] text-center border-2 border-[#FFD1DC] bg-transparent text-[#FFD1DC] hover:bg-[#FFD1DC]/10 uppercase transition-all tracking-wider flex items-center justify-center gap-1.5 cursor-pointer"
                         style={{ boxShadow: '2px 2px 0 rgba(255,209,220,0.2)' }}
                       >
                         <Linkedin size={10} />
