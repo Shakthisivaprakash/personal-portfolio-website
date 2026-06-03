@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Space+Mono:wght@400;700&display=swap");
+
+:root {
+  --font-pixel: "Press Start 2P", monospace;
+  --font-mono: "VT323", monospace;
+  --font-space: "Space Mono", monospace;
+  --background: 330 50% 95%;
+  --foreground: 195 12% 19%;
+  --card: 40 100% 97%;
+  --card-foreground: 195 12% 19%;
+  --popover: 40 100% 97%;
+  --popover-foreground: 195 12% 19%;
+  --primary: 268 40% 72%;
+  --primary-foreground: 40 100% 97%;
+  --secondary: 197 30% 80%;
+  --secondary-foreground: 195 12% 19%;
+  --muted: 260 30% 94%;
+  --muted-foreground: 195 12% 40%;
+  --accent: 340 60% 85%;
+  --accent-foreground: 195 12% 19%;
+  --destructive: 0 60% 65%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 197 30% 80%;
+  --input: 197 30% 80%;
+  --ring: 268 40% 72%;
+  
+  --sky-pink: #FFD1DC;
+  --sky-lavender: #E6E6FA;
+  --sky-cream: #FFFBF2;
+  --sky-blue: #AEC6CF;
+  --deep-lavender: #B19CD9;
+  --mint: #B2F2BB;
+  --salmon: #FF9B9B;
+  --charcoal: #2D3436;
+}
+
+.dark {
+  --background: 260 20% 10%;
+  --foreground: 40 100% 97%;
+  --card: 260 20% 14%;
+  --card-foreground: 40 100% 97%;
+  --popover: 260 20% 14%;
+  --popover-foreground: 40 100% 97%;
+  --primary: 268 40% 72%;
+  --primary-foreground: 260 20% 10%;
+  --secondary: 260 20% 20%;
+  --secondary-foreground: 40 100% 97%;
+  --muted: 260 20% 18%;
+  --muted-foreground: 260 20% 60%;
+  --accent: 340 40% 40%;
+  --accent-foreground: 40 100% 97%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 260 20% 20%;
+  --input: 260 20% 20%;
+  --ring: 268 40% 72%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  image-rendering: pixelated;
+}
+
+.font-pixel {
+  font-family: var(--font-pixel);
+}
+
+.font-mono-retro {
+  font-family: var(--font-mono);
+}
+
+.font-space {
+  font-family: var(--font-space);
+}
+
+.pixel-border {
+  border: 3px solid var(--sky-blue);
+  box-shadow: inset -2px -2px #0000001a, inset 2px 2px #fffc, 3px 3px #00000014;
+}
+
+.pixel-border-active {
+  border: 3px solid var(--deep-lavender);
+  box-shadow: inset -2px -2px #00000026, inset 2px 2px #fff9, 4px 4px #0000001a;
+}
+
+.pixel-outset {
+  box-shadow: inset -2px -2px #0003, inset 2px 2px #ffffffe6;
+}
+
+.pixel-inset {
+  box-shadow: inset 2px 2px #0003, inset -2px -2px #ffffffe6;
+}
+
+@keyframes cloud-drift-1 {
+  0% { transform: translate(-120%); }
+  100% { transform: translate(120vw); }
+}
+
+@keyframes cloud-drift-2 {
+  0% { transform: translate(120vw); }
+  100% { transform: translate(-120%); }
+}
+
+@keyframes sun-pulse {
+  0%, 100% { filter: brightness(1) drop-shadow(0 0 8px rgba(255,209,220,.6)); }
+  50% { filter: brightness(1.08) drop-shadow(0 0 16px rgba(255,209,220,.9)); }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.03); }
+}
+
+@keyframes blink {
+  0%, 90%, 100% { opacity: 1; }
+  95% { opacity: 0; }
+}
+
+@keyframes dock-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  40% { transform: translateY(-8px) scale(1.15); }
+  60% { transform: translateY(-4px) scale(1.08); }
+}
+
+/* Retro Custom Scrollbars */
+.terminal-custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.terminal-custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(174, 198, 207, 0.1);
+}
+.terminal-custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #AEC6CF;
+  border: 1px solid #FFFBF2;
+}
+.terminal-custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #AEC6CF rgba(174, 198, 207, 0.1);
+}
+
